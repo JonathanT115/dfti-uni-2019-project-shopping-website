@@ -1,0 +1,77 @@
+﻿//Task A 1//
+Create addnewproduct.php
+    Create Form connecting to addnewproduct.php
+    <Form
+       Create Form connecting to addnewproduct2.php
+           add text input form//
+              <input name="Product name"/>
+	             <input Manufacturer="Manufacturer"/>
+	              <input Description="Description"/>
+	                <float input price="£"/>
+	                  <input Stocklevel="Stock"/>
+	                    <input agelimit="age"/>
+                            Create submit button to send form data to the script addnewproduct.php//	
+
+ 
+Task A 2
+Create addnewproduct2.php
+      link it to product table database
+        insert form data from newproduct.php to the product database
+          $sql insert into products_table
+           (name, Manufacturer, Description, price, Stocklevel, agelimit ...)
+ 
+Task B 1
+add search form to into index.html
+          link form to searchproduct.php
+                 Form
+                 <input name="Product" />
+                   <input type="submit" value="Search!"/>
+                   Form
+ 
+//Task B 2//
+Create searchproduct.php
+       link it to product table database
+             select from product table where name = $n
+                If $n is false echo "product not found"
+               else fetch
+                   Add echo
+                       echo " Product name ". $row["name"]
+                       echo " Manufacturer " . $row["Manufacturer"]  
+                       echo " Description " .$row["Description"]. 
+                       echo " price " .$row["price"]. 
+                       echo " agelimit " .$row["agelimit"]. 
+
+//Task B 3//
+Get product ID from search
+      insert in to basket			
+		echo"The product has now been added to your basket";
+		echo"This product is no longer avaliable";
+
+
+Task c
+   add new product
+        //checks productID and qty to the stocklevel//
+            must get productID
+		      must get stocklevel
+		         must get qty
+		           if qty is grater than stock take the specifide ammount from the stock
+		             insert into basket
+
+task D
+ add an addinal product to the basket
+          get productID
+             echo "<form method='post' action='addtoshoppingbasket.php'>";
+               echo "qty: <input name='qty' /> <br />";
+                 echo "<input type='hidden' name='productID' value='$id' <br />";
+                   echo "<input type='submit' value='Add!' />";
+                     echo "</form>";
+
+
+task e
+Add appropriate error checking to tasks a and d
+must check that if product is unavalibale
+      D 
+	  echo"This product is no longer avaliable";
+        A  
+		must check if not admin
+        echo"you can not go on this page as you are not admin!";
